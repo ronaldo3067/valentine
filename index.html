@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Be My Valentine?</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background-color: pink;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: red;
+            margin-top: 50px;
+        }
+
+        .heart {
+            color: red;
+            font-size: 50px;
+            animation: heartbeat 1s infinite;
+        }
+
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+
+        .buttons {
+            margin-top: 20px;
+        }
+
+        button {
+            font-size: 20px;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            margin: 10px;
+            border-radius: 10px;
+        }
+
+        .yes {
+            background-color: red;
+            color: white;
+        }
+
+        .no {
+            background-color: black;
+            color: white;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Will You Be My Valentine? <span class="heart">❤️</span></h1>
+    
+    <div class="buttons">
+        <button class="yes" onclick="sayYes()">Yes</button>
+        <button class="no" onmouseover="moveNo(this)">No</button>
+    </div>
+
+    <script>
+        function sayYes() {
+            alert("Yay! You made my day! ❤️😊");
+        }
+
+        function moveNo(button) {
+            let x = Math.random() * (window.innerWidth - 100);
+            let y = Math.random() * (window.innerHeight - 50);
+            button.style.left = x + "px";
+            button.style.top = y + "px";
+        }
+    </script>
+
+</body>
+</html>
